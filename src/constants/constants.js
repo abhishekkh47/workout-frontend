@@ -1,0 +1,1 @@
+export const backendUri = 'https://lazy-tan-worm-garb.cyclic.app';

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useWorkoutContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { backendUri} from '../constants/constants';
 
 // components
 import WorkoutDetails from "../components/WorkoutDetails"
@@ -16,7 +17,7 @@ const Home = () => {
     // we only want to fire this function once when the component is rendered
     useEffect(() => {
         const fetchWorkouts = async () => {
-            const response = await fetch('/api/workouts', {
+            const response = await fetch(`${backendUri}/api/workouts`, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
